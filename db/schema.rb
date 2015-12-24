@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20151215070749) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "courses", force: true do |t|
+  create_table "courses", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.decimal  "cost"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20151215070749) do
 
   add_index "courses", ["user_id"], name: "index_courses_on_user_id", using: :btree
 
-  create_table "lessons", force: true do |t|
+  create_table "lessons", force: :cascade do |t|
     t.string   "title"
     t.string   "subtitle"
     t.integer  "section_id"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20151215070749) do
 
   add_index "lessons", ["section_id"], name: "index_lessons_on_section_id", using: :btree
 
-  create_table "sections", force: true do |t|
+  create_table "sections", force: :cascade do |t|
     t.string   "title"
     t.integer  "course_id"
     t.datetime "created_at"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20151215070749) do
 
   add_index "sections", ["course_id"], name: "index_sections_on_course_id", using: :btree
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
