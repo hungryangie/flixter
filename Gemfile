@@ -31,7 +31,7 @@ gem 'simple_form'
 gem 'devise', '>= 3.2.4'
 gem 'carrierwave'
 gem "figaro"
-gem "fog"
+gem 'carrierwave-aws'
 gem 'rails_serve_static_assets'
 gem 'mini_magick', '~> 4.3.1'
 
